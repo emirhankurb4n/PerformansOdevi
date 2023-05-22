@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Fabrika_Personel_Kayit.props" />
+</Project>

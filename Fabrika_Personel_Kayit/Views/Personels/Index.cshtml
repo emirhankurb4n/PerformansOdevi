@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Fabrika_Personel_Kayit.Models.Personel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>AnaSayfa</h1>
+
+<p>
+    <a asp-action="Create">Personel Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SurName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TCNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gorev)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurName)
+            </td>
+            <td>
+                    <img class="img-fluid" src="~/images/@item.Photo" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TCNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gorev.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detaylar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

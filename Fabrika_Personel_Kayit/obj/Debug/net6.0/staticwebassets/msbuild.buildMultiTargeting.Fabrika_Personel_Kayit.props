@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Fabrika_Personel_Kayit.props" />
+</Project>
